@@ -1,0 +1,61 @@
+﻿@model List<ViewModel>
+
+<div class="bg-light my-height container">
+    <br />
+    <h4>Eksplorator plików</h4>
+    <br />
+    <p>Sortuj według</p>
+    <select>
+        <option value="">Domyślny</option>
+        <option value="Type">Po typie</option>
+        <option value="Name">Po nazwie</option>
+        <option value="Modification">Po dacie modyfikacji</option>
+        <option value="Size">Po rozmiarze</option>
+        <option value="Attribute">Po atrybutach</option>
+    </select>
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>Rodzaj</th>
+            <th>Nazwa</th>
+            <th>Data modyfikacji</th>
+            <th>Rozmiar (B)</th>
+            <th>Atrybuty</th>
+        </tr>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>
+                    @if (obj.Type == "folder")
+                    {
+                        <img src="~/image/folder.png" class="my-img" />
+                    }
+                    else
+                    {
+                        <img src="~/image/file.png" class="my-img" />
+                    }
+                </td>
+                <td>
+                    @if (obj.Type == "folder")
+                    {
+                        <a asp-action="Index" asp-controller="Explorer" >@obj.Name</a>
+                    }
+                    else
+                    {
+                        @obj.Name
+                    }
+                </td>
+                <td>@obj.ModificationDate</td>
+                <td>
+                    @if (obj.Type != "folder")
+                    {
+                        @obj.Size
+                    }
+                </td>
+                <td>@obj.Attribute</td>
+            </tr>
+        }
+
+
+    </table>
+</div>

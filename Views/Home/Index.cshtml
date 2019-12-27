@@ -1,0 +1,11 @@
+﻿@model ViewModel
+
+<div class="bg-light my-height text-center container">
+    <br />
+    <h1>Dzień dobry</h1>
+    <br />
+    <form asp-action="Index" asp-controller="Explorer" method="post">
+        <input asp-for="Path" value="@Path" type="hidden" />
+        <button class="btn btn-dark btn-lg" type="submit">Eksplorator</button>
+    </form>
+</div>
