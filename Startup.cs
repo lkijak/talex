@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LukaszKijak.Service;
+using LukaszKijak.Service.SortList;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -15,6 +16,7 @@ namespace LukaszKijak
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<ICheckRootFolder, CheckRootFolder>();
+            services.AddTransient<IMySort, MySort>();
             services.AddMvc();
         }
 

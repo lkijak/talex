@@ -12,9 +12,8 @@ namespace LukaszKijak.Controllers
     {
         public ViewResult Index()
         {
-            ViewModel model = new ViewModel();
-            model.Path = Directory.GetCurrentDirectory();
-            return View(model);
+            ViewBag.StartPath = Directory.GetCurrentDirectory();
+            return View();
         }
 
 

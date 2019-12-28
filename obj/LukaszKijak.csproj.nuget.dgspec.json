@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MVC\\LukaszKijak\\LukaszKijak.csproj": {}
+    "C:\\Users\\lkija\\Desktop\\LukaszKijak\\LukaszKijak.csproj": {}
   },
   "projects": {
-    "D:\\MVC\\LukaszKijak\\LukaszKijak.csproj": {
+    "C:\\Users\\lkija\\Desktop\\LukaszKijak\\LukaszKijak.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MVC\\LukaszKijak\\LukaszKijak.csproj",
+        "projectUniqueName": "C:\\Users\\lkija\\Desktop\\LukaszKijak\\LukaszKijak.csproj",
         "projectName": "LukaszKijak",
-        "projectPath": "D:\\MVC\\LukaszKijak\\LukaszKijak.csproj",
+        "projectPath": "C:\\Users\\lkija\\Desktop\\LukaszKijak\\LukaszKijak.csproj",
         "packagesPath": "C:\\Users\\lkija\\.nuget\\packages\\",
-        "outputPath": "D:\\MVC\\LukaszKijak\\obj\\",
+        "outputPath": "C:\\Users\\lkija\\Desktop\\LukaszKijak\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

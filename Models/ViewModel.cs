@@ -12,6 +12,6 @@ namespace LukaszKijak.Models
         public DateTime ModificationDate { get; set; }
         public double Size { get; set; }
         public string Attribute { get; set; }
-        public string Path { get; set; }
+        public string MyPath { get; set; }
     }
 }

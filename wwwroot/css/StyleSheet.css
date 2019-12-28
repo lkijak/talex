@@ -4,3 +4,10 @@
 .my-img{
     height: 30px;
 }
+.my-div-sort{
+    float: right;
+}
+.my-img-sort {
+    height: 10px;
+    margin: 0px;
+}
