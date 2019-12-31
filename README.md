@@ -1,6 +1,6 @@
 # Explorer
 
-Aplikacja do przeglądania struktury dyskowej na pisany w technologi ASP .NET MVC
+Aplikacja do przeglądania struktury dyskowej napisana w technologi ASP .NET MVC
 
 # Wymagane:
 | ŚRODOWISKO | LINK |
