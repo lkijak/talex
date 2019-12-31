@@ -17,16 +17,6 @@ namespace LukaszKijak.Service
             List<ViewModel> sortedList = null;
             MySort mySort = new MySort();
 
-            //IEnumerable<string> folders;
-            //try
-            //{
-            //    folders = Directory.EnumerateDirectories(path);
-            //}
-            //catch (DirectoryNotFoundException)
-            //{
-            //    folders = Directory.GetCurrentDirectory();
-            //}
-
             var folders = Directory.EnumerateDirectories(path);
             var files = Directory.EnumerateFiles(path);
 

@@ -91,6 +91,31 @@ namespace LukaszKijak.Controllers
         public ViewResult Confirm() => View();
 
 
+        public IActionResult OpenFile(string name)
+        {
+            var path = GetNewPath();
+
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult DownloadFile(string name)
+        {
+            ContentType content = new ContentType();
+            var fileName = GetNewPath() + "/" + name;
+            var type = content.GetContentType(fileName);
+
+            var memory = new MemoryStream();
+            using (var stream = new FileStream(fileName, FileMode.Open))
+            {
+                stream.CopyTo(memory);
+            }
+            memory.Position = 0;
+            return File(memory, type, Path.GetFileName(fileName));
+
+        }
+
+
+
         //**************************** Set and get current path
         public string GetMainPath()
         {

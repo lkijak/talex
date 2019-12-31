@@ -62,7 +62,7 @@
                     </a>
                 </div>
             </th>
-            <th>Usuń</th>
+            <th>Akcja</th>
         </tr>
         @if (ViewBag.Root != "rootFolder")
         {
@@ -73,6 +73,7 @@
                 <td>
                     <a asp-action="Index" asp-route-navigation="up">...</a>
                 </td>
+                <td></td>
                 <td></td>
                 <td></td>
             </tr>
@@ -98,7 +99,7 @@
                     }
                     else
                     {
-                        @obj.Name
+                        <a asp-action="Index" asp-controller="FileOperate" asp-route-name="@obj.Name">@obj.Name</a>
                     }
                 </td>
                 <td>@obj.ModificationDate</td>
@@ -111,6 +112,10 @@
                 <td>@obj.Attribute</td>
                 <td>
                     <a asp-action="Delete" asp-route-oldName="@obj.Name"><img src="~/image/trash.png" class="my-img" /></a>
+                    @if (obj.Type != "folder")
+                    {
+                        <a asp-action="DownloadFile" asp-route-name="@obj.Name"><img src="~/image/download.png" class="my-img" /></a>
+                    }
                 </td>
             </tr>
         }
