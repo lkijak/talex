@@ -4,16 +4,16 @@
     <br />
     <h4>Eksplorator plików</h4>
     <br /><br />
-    <p>D:/Aktualny folder</p>
+    <p>Tu powinien być link : @ViewBag.MyNewPath</p>
     <table class="table table-bordered">
         <tr>
             <th>
-                Rodzaj
+                Typ
                 <div class="my-div-sort">
-                    <a asp-action="Index" asp-controller="Explorer" asp-route-sort="Type">
+                    <a asp-action="Index" asp-route-sort="Type">
                         <img src="~/image/sortAscending.png" title="Sortuj rosnąco" class="my-img-sort" />
                     </a>
-                    <a asp-action="Index" asp-controller="Explorer" asp-route-sort="TypeDescending">
+                    <a asp-action="Index" asp-route-sort="TypeDescending">
                         <img src="~/image/sortDescending.png" title="Sortuj malejąco" class="my-img-sort" />
                     </a>
                 </div>
@@ -21,10 +21,10 @@
             <th>
                 Nazwa
                 <div class="my-div-sort">
-                    <a asp-action="Index" asp-controller="Explorer" asp-route-sort="Name">
+                    <a asp-action="Index" asp-route-sort="Name">
                         <img src="~/image/sortAscending.png" title="Sortuj rosnąco" class="my-img-sort" />
                     </a>
-                    <a asp-action="Index" asp-controller="Explorer" asp-route-sort="NameDescending">
+                    <a asp-action="Index" asp-route-sort="NameDescending">
                         <img src="~/image/sortDescending.png" title="Sortuj malejąco" class="my-img-sort" />
                     </a>
                 </div>
@@ -32,21 +32,21 @@
             <th>
                 Data modyfikacji
                 <div class="my-div-sort">
-                    <a asp-action="Index" asp-controller="Explorer" asp-route-sort="Modification">
+                    <a asp-action="Index" asp-route-sort="Modification">
                         <img src="~/image/sortAscending.png" title="Sortuj rosnąco" class="my-img-sort" />
                     </a>
-                    <a asp-action="Index" asp-controller="Explorer" asp-route-sort="ModificationDescending">
+                    <a asp-action="Index" asp-route-sort="ModificationDescending">
                         <img src="~/image/sortDescending.png" title="Sortuj malejąco" class="my-img-sort" />
                     </a>
                 </div>
             </th>
             <th>
-                Rozmiar (B)
+                Rozmiar (KB)
                 <div class="my-div-sort">
-                    <a asp-action="Index" asp-controller="Explorer" asp-route-sort="Size">
+                    <a asp-action="Index" asp-route-sort="Size">
                         <img src="~/image/sortAscending.png" title="Sortuj rosnąco" class="my-img-sort" />
                     </a>
-                    <a asp-action="Index" asp-controller="Explorer" asp-route-sort="SizeDescending">
+                    <a asp-action="Index" asp-route-sort="SizeDescending">
                         <img src="~/image/sortDescending.png" title="Sortuj malejąco" class="my-img-sort" />
                     </a>
                 </div>
@@ -54,14 +54,25 @@
             <th>
                 Atrybuty
                 <div class="my-div-sort">
-                    <a asp-action="Index" asp-controller="Explorer" asp-route-sort="Attribute">
+                    <a asp-action="Index" asp-route-sort="Attribute">
                         <img src="~/image/sortAscending.png" title="Sortuj rosnąco" class="my-img-sort" />
                     </a>
-                    <a asp-action="Index" asp-controller="Explorer" asp-route-sort="AttributeDescending">
+                    <a asp-action="Index" asp-route-sort="AttributeDescending">
                         <img src="~/image/sortDescending.png" title="Sortuj malejąco" class="my-img-sort" />
                     </a>
                 </div>
             </th>
+            <th>Usuń</th>
+        </tr>
+        <tr>
+            <td>
+                <img src="~/image/folder.png" class="my-img" />
+            </td>
+            <td>
+                <a asp-action="Index" asp-route-navigation="up">...</a>
+            </td>
+            <td></td>
+            <td></td>
         </tr>
         @foreach (var obj in Model)
         {
@@ -69,17 +80,17 @@
                 <td>
                     @if (obj.Type == "folder")
                     {
-                        <img src="~/image/folder.png" class="my-img" />
+                        <a asp-action="Rename" asp-route-oldName="@obj.Name"><img src="~/image/folder.png" class="my-img" /></a>
                     }
                     else
                     {
-                        <img src="~/image/file.png" class="my-img" />
+                        <a asp-action="Rename" asp-route-oldName="@obj.Name"><img src="~/image/file.png" class="my-img" /></a>
                     }
                 </td>
                 <td>
                     @if (obj.Type == "folder")
                     {
-                        <a asp-action="Index" asp-controller="Explorer" asp-route-path="@obj.Name">@obj.Name</a>
+                        <a asp-action="Index" asp-route-path="@obj.Name">@obj.Name</a>
                     }
                     else
                     {
@@ -94,9 +105,11 @@
                     }
                 </td>
                 <td>@obj.Attribute</td>
+                <td>
+                    <a asp-action="Delete" asp-route-oldName="@obj.Name"><img src="~/image/trash.png" class="my-img" /></a>
+                </td>
             </tr>
         }
-
 
     </table>
 </div>

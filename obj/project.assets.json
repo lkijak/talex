@@ -12088,11 +12088,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lkija\\Desktop\\LukaszKijak\\LukaszKijak.csproj",
+      "projectUniqueName": "D:\\MVC\\LukaszKijak\\LukaszKijak.csproj",
       "projectName": "LukaszKijak",
-      "projectPath": "C:\\Users\\lkija\\Desktop\\LukaszKijak\\LukaszKijak.csproj",
+      "projectPath": "D:\\MVC\\LukaszKijak\\LukaszKijak.csproj",
       "packagesPath": "C:\\Users\\lkija\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lkija\\Desktop\\LukaszKijak\\obj\\",
+      "outputPath": "D:\\MVC\\LukaszKijak\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

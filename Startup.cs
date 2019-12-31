@@ -15,8 +15,11 @@ namespace LukaszKijak
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<ICheckRootFolder, CheckRootFolder>();
-            services.AddTransient<IMySort, MySort>();
+            services.AddTransient<IShowFolder, ShowFolder>();
+
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(10);
+            });
             services.AddMvc();
         }
 
@@ -26,7 +29,7 @@ namespace LukaszKijak
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseSession();
             app.UseStaticFiles();
             app.UseStatusCodePages();
             app.UseMvcWithDefaultRoute();

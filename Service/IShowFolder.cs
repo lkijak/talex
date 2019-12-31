@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace LukaszKijak.Service
 {
-    public interface ICheckRootFolder
+    public interface IShowFolder
     {
-        List<ViewModel> GetFolderContent(string path);
+        List<ViewModel> GetFolderContent(string path, string sortBy);
 
 
 

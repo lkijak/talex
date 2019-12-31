@@ -1,4 +1,5 @@
 ﻿using LukaszKijak.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,9 @@ namespace LukaszKijak.Controllers
     {
         public ViewResult Index()
         {
-            ViewBag.StartPath = Directory.GetCurrentDirectory();
+            //ViewBag.StartPath = Directory.GetCurrentDirectory();
+            string mainPath = Directory.GetCurrentDirectory();
+            HttpContext.Session.SetString("mainPath", mainPath);
             return View();
         }
 

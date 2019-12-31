@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LukaszKijak.Service.SortList
 {
-    public class MySort : IMySort
+    public class MySort
     {
         private List<ViewModel> sortedList { get; set; }
 

@@ -1,4 +1,8 @@
-﻿.my-height{
+﻿.my-home-bg{
+    background-image: url(../image/index.jpeg);
+    background-size: cover;
+}
+.my-height{
     min-height: 100vh;
 }
 .my-img{
