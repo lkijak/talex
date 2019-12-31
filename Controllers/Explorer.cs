@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace LukaszKijak.Controllers
@@ -14,21 +15,15 @@ namespace LukaszKijak.Controllers
     public class Explorer : Controller
     {
         private IShowFolder showFolder;
-        private IPathTool pathTool;
 
-        public Explorer(IShowFolder checkFld,
-            IPathTool pthTool)
+        public Explorer(IShowFolder checkFld)
         {
             showFolder = checkFld;
-            pathTool = pthTool;
         }
 
         public ViewResult Index(string path, string sort, string navigation)
         {
             List<ViewModel> list = null;
-
-            pathTool.GetCurrentPath(path, navigation);
-
             string newPath = null;
 
             if (path == "start" && navigation == null)
@@ -37,6 +32,7 @@ namespace LukaszKijak.Controllers
                 newPath = GetMainPath();
                 list = showFolder.GetFolderContent(newPath, sort);
                 ViewBag.MyNewPath = GetNewPath();
+                ViewBag.Root = "rootFolder";
                 return View(list);
             }
             else if(path != "start" && navigation == null)
@@ -45,6 +41,7 @@ namespace LukaszKijak.Controllers
                 newPath = GetNewPath();
                 list = showFolder.GetFolderContent(newPath, sort);
                 ViewBag.MyNewPath = GetNewPath();
+                ViewBag.Root = "";
                 return View(list);
             }
             else if (path == null && navigation == "up")
@@ -53,15 +50,12 @@ namespace LukaszKijak.Controllers
                 newPath = GetNewPath();
                 list = showFolder.GetFolderContent(newPath, sort);
                 ViewBag.MyNewPath = GetNewPath();
+                if (GetNewPath() == GetMainPath())
+                {
+                    ViewBag.Root = "rootFolder";
+                }
                 return View(list);
             }
-            //else if (path == null && navigation == null)
-            //{
-            //    list = showFolder.GetFolderContent(GetMainPath(), sort);
-            //    ViewBag.MyNewPath = GetMainPath();
-            //    return View(list);
-            //}
-
             list = showFolder.GetFolderContent(GetMainPath(), sort);
             ViewBag.MyNewPath = GetMainPath();
             return View(list);
@@ -79,13 +73,25 @@ namespace LukaszKijak.Controllers
         [HttpPost]
         public IActionResult Rename(EditModel model)
         {
-            //System.IO.File.Move();
-            return RedirectToAction("Index");
+            var filePath = GetNewPath();
+            string oldName = filePath + "/" + model.OldName;
+            string newName = filePath + "/" + model.NewName;
+
+            try
+            {
+                System.IO.File.Move(oldName, newName);
+                return RedirectToAction("Confirm");
+            }
+            catch (FileNotFoundException)
+            {
+                Directory.Move(oldName, newName);
+                return RedirectToAction("Confirm");
+            }
         }
+        public ViewResult Confirm() => View();
 
 
-
-        //******************************************************************************* ustawienie sciezek
+        //**************************** Set and get current path
         public string GetMainPath()
         {
             string path = HttpContext.Session.GetString("mainPath");

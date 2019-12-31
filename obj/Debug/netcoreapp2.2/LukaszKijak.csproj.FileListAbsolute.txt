@@ -59,3 +59,4 @@ C:\Users\lkija\Desktop\LukaszKijak\obj\Debug\netcoreapp2.2\LukaszKijak.pdb
 C:\Users\lkija\Desktop\LukaszKijak\obj\Debug\netcoreapp2.2\LukaszKijak.csproj.CopyComplete
 C:\Users\lkija\Desktop\LukaszKijak\obj\Debug\netcoreapp2.2\LukaszKijak.csprojAssemblyReference.cache
 D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\Razor\Views\Explorer\Rename.cshtml.g.cs
+D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\Razor\Views\Explorer\Confirm.cshtml.g.cs

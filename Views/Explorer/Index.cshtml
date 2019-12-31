@@ -64,16 +64,20 @@
             </th>
             <th>Usuń</th>
         </tr>
-        <tr>
-            <td>
-                <img src="~/image/folder.png" class="my-img" />
-            </td>
-            <td>
-                <a asp-action="Index" asp-route-navigation="up">...</a>
-            </td>
-            <td></td>
-            <td></td>
-        </tr>
+        @if (ViewBag.Root != "rootFolder")
+        {
+            <tr>
+                <td>
+                    <img src="~/image/folder.png" class="my-img" />
+                </td>
+                <td>
+                    <a asp-action="Index" asp-route-navigation="up">...</a>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        }
+
         @foreach (var obj in Model)
         {
             <tr>
