@@ -91,12 +91,12 @@ namespace LukaszKijak.Controllers
         public ViewResult Confirm() => View();
 
 
-        public IActionResult OpenFile(string name)
-        {
-            var path = GetNewPath();
+        //public IActionResult OpenFile(string name)
+        //{
+        //    var path = GetNewPath();
 
-            return RedirectToAction("Index");
-        }
+        //    return RedirectToAction("Index");
+        //}
 
         public IActionResult DownloadFile(string name)
         {
@@ -104,17 +104,21 @@ namespace LukaszKijak.Controllers
             var fileName = GetNewPath() + "/" + name;
             var type = content.GetContentType(fileName);
 
-            var memory = new MemoryStream();
+            MemoryStream memory = new MemoryStream();
             using (var stream = new FileStream(fileName, FileMode.Open))
             {
                 stream.CopyTo(memory);
             }
             memory.Position = 0;
             return File(memory, type, Path.GetFileName(fileName));
-
         }
 
+        public IActionResult Delete(string name)
+        {
 
+
+            return RedirectToAction("Index");
+        }
 
         //**************************** Set and get current path
         public string GetMainPath()

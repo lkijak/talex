@@ -26,6 +26,7 @@ namespace LukaszKijak.Models
                 {".cshtml", "text/cshtml" },
                 {".js", "text/js" },
                 {".css", "text/css" },
+                {".md", "text/md" },
                 {".sln", "application/sln" },
                 {".csproj", "application/csproj" },
                 {".png", "image/png"},
