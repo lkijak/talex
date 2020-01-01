@@ -1,1 +1,0 @@
-﻿To jest dokument testujący zmianę nazwy pliku.

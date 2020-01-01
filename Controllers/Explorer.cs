@@ -25,7 +25,7 @@ namespace LukaszKijak.Controllers
         {
             List<ViewModel> list = null;
             string newPath = null;
-
+            
             if (path == "start" && navigation == null)
             {
                 AddToNewPath(path);
@@ -41,7 +41,11 @@ namespace LukaszKijak.Controllers
                 newPath = GetNewPath();
                 list = showFolder.GetFolderContent(newPath, sort);
                 ViewBag.MyNewPath = GetNewPath();
-                ViewBag.Root = "";
+                //ViewBag.Root = "";
+                if (GetNewPath() == GetMainPath())
+                {
+                    ViewBag.Root = "rootFolder";
+                }
                 return View(list);
             }
             else if (path == null && navigation == "up")
@@ -80,16 +84,15 @@ namespace LukaszKijak.Controllers
             try
             {
                 System.IO.File.Move(oldName, newName);
-                return RedirectToAction("Confirm");
+                return View("Confirm");
             }
             catch (FileNotFoundException)
             {
                 Directory.Move(oldName, newName);
-                return RedirectToAction("Confirm");
+                return View("Confirm");
             }
         }
-        public ViewResult Confirm() => View();
-
+        
 
         //public IActionResult OpenFile(string name)
         //{
@@ -113,12 +116,31 @@ namespace LukaszKijak.Controllers
             return File(memory, type, Path.GetFileName(fileName));
         }
 
-        public IActionResult Delete(string name)
+        public ActionResult ConfirmDelete(string name)
         {
-
-
-            return RedirectToAction("Index");
+            TempData["DeleteItemName"] = name;
+            return View();
         }
+
+        public IActionResult Delete()
+        {
+            var name = TempData["DeleteItemName"];
+            var itemName = GetNewPath() + "/" + name;
+            FileAttributes attr = System.IO.File.GetAttributes(itemName);
+            if (attr != FileAttributes.Directory)
+            {
+                System.IO.File.Delete(itemName);
+                return View("ConfirmationDelete");
+            }
+
+            if (Directory.GetFileSystemEntries(itemName).Length == 0)
+            {
+                Directory.Delete(itemName);
+                return View("ConfirmationDelete");
+            }
+            return View("ErrorDelete");
+        }
+
 
         //**************************** Set and get current path
         public string GetMainPath()

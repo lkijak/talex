@@ -15,3 +15,7 @@
     height: 10px;
     margin: 0px;
 }
+.my-button {
+    background: url(../image/trash.png);
+    height: 30px;
+}

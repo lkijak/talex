@@ -27,7 +27,6 @@ D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\LukaszKijak.Views.pdb
 D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\LukaszKijak.dll
 D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\LukaszKijak.pdb
 D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\LukaszKijak.csproj.CopyComplete
-D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\LukaszKijak.csprojAssemblyReference.cache
 C:\Users\lkija\Desktop\LukaszKijak\bin\Debug\netcoreapp2.2\appsettings.Development.json
 C:\Users\lkija\Desktop\LukaszKijak\bin\Debug\netcoreapp2.2\appsettings.json
 C:\Users\lkija\Desktop\LukaszKijak\bin\Debug\netcoreapp2.2\libman.json
@@ -60,3 +59,7 @@ C:\Users\lkija\Desktop\LukaszKijak\obj\Debug\netcoreapp2.2\LukaszKijak.csproj.Co
 C:\Users\lkija\Desktop\LukaszKijak\obj\Debug\netcoreapp2.2\LukaszKijak.csprojAssemblyReference.cache
 D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\Razor\Views\Explorer\Rename.cshtml.g.cs
 D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\Razor\Views\Explorer\Confirm.cshtml.g.cs
+D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\LukaszKijak.csprojAssemblyReference.cache
+D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\Razor\Views\Explorer\ConfirmDelete.cshtml.g.cs
+D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\Razor\Views\Explorer\ErrorDelete.cshtml.g.cs
+D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\Razor\Views\Explorer\ConfirmationDelete.cshtml.g.cs

@@ -111,7 +111,7 @@
                 </td>
                 <td>@obj.Attribute</td>
                 <td>
-                    <a asp-action="Delete" asp-route-oldName="@obj.Name"><img src="~/image/trash.png" class="my-img" /></a>
+                    <a asp-action="ConfirmDelete" asp-route-name="@obj.Name"><img src="~/image/trash.png" class="my-img" /></a>
                     @if (obj.Type != "folder")
                     {
                         <a asp-action="DownloadFile" asp-route-name="@obj.Name"><img src="~/image/download.png" class="my-img" /></a>

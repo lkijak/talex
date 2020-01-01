@@ -1,5 +1,6 @@
-﻿# ReadMe
-=================================================================================================
+﻿# Explorer
+
+Aplikacja do przeglądania struktury dyskowej na pisany w technologi ASP .NET MVC
 
 # Wymagane:
 | ŚRODOWISKO | LINK |
@@ -20,4 +21,3 @@ Pobieramy i instalujemy ASP .NET Core 2.2 oraz Visual Studio (opcjonalnie pobier
 
 # Konfiguracja:
 Aplikacja nie wymaga żadnej konfiguracji
-
