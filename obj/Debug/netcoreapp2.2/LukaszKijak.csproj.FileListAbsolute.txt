@@ -59,7 +59,8 @@ C:\Users\lkija\Desktop\LukaszKijak\obj\Debug\netcoreapp2.2\LukaszKijak.csproj.Co
 C:\Users\lkija\Desktop\LukaszKijak\obj\Debug\netcoreapp2.2\LukaszKijak.csprojAssemblyReference.cache
 D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\Razor\Views\Explorer\Rename.cshtml.g.cs
 D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\Razor\Views\Explorer\Confirm.cshtml.g.cs
-D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\LukaszKijak.csprojAssemblyReference.cache
 D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\Razor\Views\Explorer\ConfirmDelete.cshtml.g.cs
 D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\Razor\Views\Explorer\ErrorDelete.cshtml.g.cs
 D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\Razor\Views\Explorer\ConfirmationDelete.cshtml.g.cs
+D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\LukaszKijak.csprojAssemblyReference.cache
+D:\MVC\LukaszKijak\obj\Debug\netcoreapp2.2\Razor\Views\Explorer\ErrorOpen.cshtml.g.cs

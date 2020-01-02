@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -41,7 +42,6 @@ namespace LukaszKijak.Controllers
                 newPath = GetNewPath();
                 list = showFolder.GetFolderContent(newPath, sort);
                 ViewBag.MyNewPath = GetNewPath();
-                //ViewBag.Root = "";
                 if (GetNewPath() == GetMainPath())
                 {
                     ViewBag.Root = "rootFolder";
@@ -92,14 +92,24 @@ namespace LukaszKijak.Controllers
                 return View("Confirm");
             }
         }
-        
 
-        //public IActionResult OpenFile(string name)
-        //{
-        //    var path = GetNewPath();
+        public IActionResult OpenFile(string name)
+        {
+            if (name != null)
+            {
+                var directory = GetNewPath();
 
-        //    return RedirectToAction("Index");
-        //}
+                Process process = new Process();
+                process.StartInfo.UseShellExecute = true;
+                process.StartInfo.FileName = name;
+                process.StartInfo.WorkingDirectory = directory;
+                process.Start();
+                
+                return RedirectToAction("Index");
+            }
+            return View("ErrorOpen");
+            
+        }
 
         public IActionResult DownloadFile(string name)
         {

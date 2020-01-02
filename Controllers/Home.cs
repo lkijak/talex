@@ -13,7 +13,6 @@ namespace LukaszKijak.Controllers
     {
         public ViewResult Index()
         {
-            //ViewBag.StartPath = Directory.GetCurrentDirectory();
             string mainPath = Directory.GetCurrentDirectory();
             HttpContext.Session.SetString("mainPath", mainPath);
             return View();
