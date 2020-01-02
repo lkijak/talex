@@ -9,6 +9,7 @@
         <input asp-for="NewName" class="form-control" />
         <input asp-for="OldName" type="hidden" value="@Model.OldName" />
         <br />
-        <button type="submit" class="btn btn-lg btn-dark">Zapisz</button>
+        <button type="submit" class="btn btn-lg btn-info">Zapisz</button>
+        <a asp-action="Index" class="btn btn-lg btn-danger">Anuluj</a> 
     </form>
 </div>
