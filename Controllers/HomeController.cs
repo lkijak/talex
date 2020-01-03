@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LukaszKijak.Controllers
 {
-    public class Home : Controller
+    public class HomeController : Controller
     {
         public ViewResult Index()
         {

@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 
 namespace LukaszKijak.Controllers
 {
-    public class Explorer : Controller
+    public class ExplorerController : Controller
     {
         private IShowFolder showFolder;
 
-        public Explorer(IShowFolder checkFld)
+        public ExplorerController(IShowFolder checkFld)
         {
             showFolder = checkFld;
         }
